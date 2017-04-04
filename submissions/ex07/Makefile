@@ -1,5 +1,5 @@
 all:
-	pdflatex classification_using_ethalons.tex
+	pdflatex classification_using_etalons.tex
 
 clean:
 	-rm *.log *.pdf *.aux
