@@ -1,0 +1,6 @@
+book_filename: "k_means"
+#language:
+#  ui:
+#    chapter_name: "Kapitola "
+#    reference_name: "Reference"
+delete_merged_file: false

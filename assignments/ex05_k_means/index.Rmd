@@ -1,0 +1,90 @@
+--- 
+title: "k-means Clustering"
+author: "Jan Gaura"
+date: "`r Sys.Date()`"
+#site: bookdown::bookdown_site
+output:
+  bookdown::tufte_handout2:
+    toc: no
+    number_sections: false
+    #highlight: haddock
+  #  css: toc.css
+
+documentclass: book
+bibliography: []
+biblio-style: apalike
+link-citations: yes
+github-repo: geordi/ia-course
+description: "k-means Clustering"
+header-includes:
+#  - \usepackage{a4wide}
+#  - \usepackage[left]{lineno}
+#  - \linenumbers
+---
+
+# *k*-means Clustering
+
+When we implemented classification using etalons, we had to manualy assign a class to each object.
+We may say that this approach is a small example of supervised learning.
+
+Sometimes, we would like not to assign anything manualy and still get the classification right.
+One such a method is called *k*-means clustering.
+This method is able to cluster (basicaly separate) input data in *k* different partions (clusters).
+Nice feature is that it is able to do so automatically without our input.
+As you may already guessed, the *k* in its name stands for number of clusters (classes) in the input data.
+In our case the $k=3$.
+
+## Algorithm [^alg]
+
+0. Initialize *k* centroids ($m_1$, ..., $m_k$) to randomly selected points from the input.
+1. Compute Euclidean distance from each centroid to all input data points.
+2. Assign each input data to the closest centroid.
+3. Update position of the centroid by calculating the mean position of the assigned points.
+4. Repeat from step 1 until centroids do not move very much (distance is less that give threshold, or no reassignment of data points occurs).
+
+The algorithm basically creates a voronoi diagram for centroids.
+
+It's a bit unfortunate that the algorithm does not always converge.
+So you have to run it once again to obtain a desired output.
+
+Also, the output depends on initialization, you can experiment with the initial positions of centroids to see what happens.
+
+```{r fig-margin, fig.margin=TRUE, echo=FALSE}
+library(ggplot2)
+library(ggvoronoi)
+#set.seed(45056)
+#x <- c(0.111,0.715,0.167,0.155,0.758,0.215,0.151,0.725,0.219,0.153,0.707,0.220)
+#y <- c(0.935,0.924,0.079,0.958,0.964,0.081,0.960,0.935,0.075,0.955,0.913,0.078)
+
+x <- c(0.111,0.715,0.167)
+y <- c(0.935,0.924,0.079)
+
+#0.111, 0.935), (0.155, 0.958), (0.151, 0.960), (0.153, 0.955),
+#(0.715, 0.924), (0.758, 0.964), (0.725, 0.935), (0.707, 0.913),
+#(0.167, 0.079), (0.215, 0.081), (0.219, 0.075), (0.220, 0.078)
+
+points <- data.frame(x, y,
+                     distance = sqrt((x-100)^2 + (y-100)^2))
+#circle <- data.frame(x = 100*(1+cos(seq(0, 2*pi, length.out = 2500))),
+#                     y = 100*(1+sin(seq(0, 2*pi, length.out = 2500))),
+#                     group = rep(1,2500))
+
+#ggplot(points) +
+#  geom_point(aes(x,y,color=distance)) +
+#  geom_path(data=circle,aes(x,y,group=group))
+
+#ggplot(points) +
+#  geom_voronoi(aes(x,y,fill=distance)) +
+#  geom_point(aes(x,y))
+
+
+ggplot(points,aes(x,y)) +
+  stat_voronoi(geom="path") +
+  geom_point()
+```
+
+Centroids provided by *k*-means algorithm are then used in classification in the same way as were etalons.
+The only difference is that we do not know which class of object is represented by which centroid.
+Classification than works in the way that class names are simply numbers.
+
+[^alg]: https://en.wikipedia.org/wiki/K-means_clustering
