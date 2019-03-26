@@ -16,9 +16,9 @@
 The potential of neuron $i$ in a layer $k$ is defined as the weighted sum of all inputs to the neuron, i.e.
 \begin{equation}
 \label{eq:1}
-s_{k,i} = \sum_{j} w_{k,i,j}\:  y_{k-1,j} \, ,
+s_{k,i} = \sum_{j} w_{k-1,i,j}\:  y_{k-1,j} \, ,
 \end{equation}
-where $w_{k,i,j}$ is the weight between a neuron $i$ from the $k$-th layer and a neuron $j$ from the $(k-1)$-st layer, $y_{k-1,j}$ is the input to the neuron $i$ (output of the neurons from the previous layer).
+where $w_{k-1,i,j}$ is the weight between a neuron $i$ from the $k$-th layer and a neuron $j$ from the $(k-1)$-st layer, $y_{k-1,j}$ is the input to the neuron $i$ (output of the neurons from the previous layer).
 If this potential is higher than a threshold value, the neuron is excited to the value $1$, otherwise it is inhibited to the value $0$.
 The value of the excitation depends on an activation function.
 For this purpose, we use the sigmoid function.
