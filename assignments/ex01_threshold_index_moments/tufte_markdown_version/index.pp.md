@@ -1,6 +1,5 @@
 ---
 title: Object Features Detection
-subtitle: Jan Gaura
 date: 2020-02-13
 author: Jan Gaura
 ---
@@ -12,8 +11,7 @@ One of the possible ways in detection and classification of objects in images is
 Today's lecture will consist of the following steps:
 
 - Thresholding the image,
-- indexing objects,
-- computing moments and features.
+- indexing objects.
 
 In the end, our task is to label each object in Figure !ref(fig:input).
 
@@ -23,6 +21,7 @@ In the end, our task is to label each object in Figure !ref(fig:input).
 The fist step is to separate objects in the image $f$ from the background. In our example image, this task is not so hard,
 so we can apply the following thresholding criterion to each pixel in image $f$ to construct a new image $g$
 
+!marginnote(Value $1$ can be changed to $255$ to better see the output in an image that is grayscale bit 8 bits depth.)
 $$
 g(x, y) = \left\{
 \begin{array}{cc}
@@ -31,8 +30,8 @@ g(x, y) = \left\{
 \end{array}
 \right.,
 $$ {#eq:threshold}
-where $t$ is a chosen threshold. There are many method to select $t$, see the text for this course.
-However, in our case, we can set the threshold manually.
+where $t$ is a chosen threshold value. There are many method to select $t$, see the text for this course.
+However, in the case of our input image, we can set the threshold manually.
 
 After this step, we have a binary image that indicates where are the objects and where is the background.
 

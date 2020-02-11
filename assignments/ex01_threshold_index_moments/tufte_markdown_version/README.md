@@ -8,5 +8,5 @@ You need to install:
 
 ## How to Run
 
-For pdf: `$ sh ./build_pdf.sh`
-For HTML: `$ sh ./build_html.sh`
+- For pdf: `$ sh ./build_pdf.sh`
+- For HTML: `$ sh ./build_html.sh`
