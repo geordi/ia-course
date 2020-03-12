@@ -1,10 +1,10 @@
 ---
 title: Backpropagation Neural Network
 date: 2020-02-28
-author: Michael Holusa
+author: Michael Holuša
 ---
 
-!figure(Neural Network Model)(./drawing.svg)(fig:nn_model)
+!figure(Neural Network Model)(./drawing.pdf)(fig:nn_model)
 
 The potential of neuron $i$ in a layer $k$ is defined as the weighted sum of all inputs to the neuron, i.e.
 
