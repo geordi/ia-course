@@ -2,7 +2,17 @@
 
 This repo contains course materials for the [Image Analysis I](http://mrl.cs.vsb.cz/people/gaura/ano_course.html) course at VSB-TUO, FEECS, Department of Computer Science.
 
-## Buiding
+
+## Incorporate
+
+For BPNN, incorporate these:
+
+- [Andrej Karpathy's Hacker's guide to Neural Networks](http://karpathy.github.io/neuralnets/)
+- [Andrej Karpathy's Micrograd](https://github.com/karpathy/micrograd)
+- [Minigrad](https://github.com/kennysong/minigrad)
+
+
+## Needed Tools
 
 In order to build these assignments, you need some tools to be installed on your systems:
 
