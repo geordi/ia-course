@@ -11,6 +11,10 @@ For BPNN, incorporate these:
 - [Andrej Karpathy's Micrograd](https://github.com/karpathy/micrograd)
 - [Minigrad](https://github.com/kennysong/minigrad)
 
+DFT:
+
+- [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
+
 
 ## Needed Tools
 
