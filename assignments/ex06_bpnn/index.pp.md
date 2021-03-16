@@ -59,7 +59,7 @@ d_{k,i} = \Big( \sum_j d_{k+1,j} \: w_{k,j,i} \Big) \lambda \: y_{k,i} \: (1-y_{
 The weights in the network are then changed by 
 \begin{equation}
 \label{eq6}
-\Delta w_{k,i,j} = \eta \: d_{k+1,i} \: y_{k,i} \, .
+\Delta w_{k,i,j} = \eta \: d_{k+1,i} \: y_{k,j} \, .
 \end{equation}
 
 ## Your task
